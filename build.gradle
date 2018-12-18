@@ -5,15 +5,19 @@ buildscript {
     repositories {
         google()
         jcenter()
+
+        //添加插件仓库地址：Fabric-Crashlytics的repo
+        maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.2'
 
+        //Kotlin
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        //添加fabric插件
+        classpath 'io.fabric.tools:gradle:1.+'
     }
 }
 
