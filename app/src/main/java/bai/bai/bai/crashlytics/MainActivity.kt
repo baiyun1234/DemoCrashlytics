@@ -1,6 +1,7 @@
 package bai.bai.bai.crashlytics
 
 import android.app.Activity
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -14,11 +15,14 @@ class MainActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Fabric.with(this, Crashlytics())
+//        Fabric.with(this, Crashlytics())
         setContentView(R.layout.activity_main)
+        Fabric.with(this, Crashlytics())
 
         btn_start.setOnClickListener {
-            Log.d("baibai", "${datas!!.length}")
+//            Log.d("baibai", "${datas!!.length}")
+            startActivity(Intent(this@MainActivity, SecendsActivity::class.java))
         }
     }
 }
+
